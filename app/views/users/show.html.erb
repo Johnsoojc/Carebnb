@@ -1,0 +1,6 @@
+<h1>this is ur profile page:</h1>
+
+
+<p>Welcome to your profile <%= @user.email %></p>
+
+<%= button_to "Setting", {:action => "edit"}, {:method => "get"}%>

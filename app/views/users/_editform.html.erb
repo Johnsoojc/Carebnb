@@ -1,0 +1,8 @@
+<%=form_for @users do |u| %>
+
+<p>
+  New Email : <%=u.text_field :email %></br>
+  New Password : <%= u.text_field :password %>
+</p>
+<%= u.submit%>
+<% end %>
