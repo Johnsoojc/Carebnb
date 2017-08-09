@@ -1,0 +1,7 @@
+<div id="clearance" class="sign-in">
+  <h2><%= t(".title") %></h2>
+<% if signed_in? %>
+<% else %>
+  <%= render partial: '/sessions/form' %>
+<% end %>
+</div>

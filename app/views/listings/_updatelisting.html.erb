@@ -1,0 +1,9 @@
+<%= form_for @listing do |u| %>
+
+<p>
+  New Title : <%= u.text_field :title %></br>
+  New Price : <%= u.number_field :price %>
+</p>
+
+<%= u.submit%>
+<% end %>
