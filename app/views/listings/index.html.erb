@@ -1,0 +1,25 @@
+<h1> Below are all the trending properties </h1>
+
+<table>
+
+<tr>
+  <th>Title</th>
+  <th>Price</th>
+  <th>Who posted</th>
+</tr>
+
+<% @listings.each do |y| %>
+
+<tr>
+  <td><%= y.title %></td>
+  <td><%= y.price %></td>
+  <td><%= y.user.email %></td>
+</tr>
+
+
+
+<% end %>
+</table>
+
+<%= button_to "Back to your profile", user_path(current_user), method: :get %>
+<%= link_to "See your own listings", mylisting_path(@listing) %>

@@ -1,0 +1,25 @@
+<h1> Below are all the listings that you posted </h1>
+
+<table>
+
+
+<tr>
+  <th> Title </th>
+  <th> Price </th>
+</tr>
+
+<% @listing.each do |u| %>
+
+<tr>
+  <td><%= u.title %></td>
+  <td><%= u.price %></td>
+  <td><%= button_to 'Edit', edit_listing_path(u), method: :get %></td>
+  <td><%= button_to 'Delete', listing_path(u),
+      method: :delete,
+      data: { confirm: 'Are you sure?' }  %></td>
+</tr>
+<% end %>
+</table>
+
+<%= button_to "Create your new listings", new_listing_path, method: :get %>
+<%= button_to "Back to your profile", user_path(current_user), method: :get %>

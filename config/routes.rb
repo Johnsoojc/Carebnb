@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'listings/index'
+
   root 'welcome#index'
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :users, controller: "users", only: [:show, :edit,:update]
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
-
+  resources :listings, controller: "listings"
+  get "/mylisting" => "listings#mylisting"
 
 end

@@ -1,0 +1,19 @@
+<%=form_for @listing do |u| %>
+
+<p>
+  Title : <%= u.text_field :title %></br>
+  Price : <%= u.number_field :price %>
+</p>
+<%= u.submit%>
+<% end %>
+
+<!-- This is another way of writing a form for update and making a new form!
+So you doesnt need to write two file -->
+
+<!-- <%= form_for([current_user, @listing]) do |u| %>
+<p>
+  Title : <%= u.text_field :title %></br>
+  Price : <%= u.number_field :price %>
+</p>
+<%= u.submit%>
+<% end %> -->

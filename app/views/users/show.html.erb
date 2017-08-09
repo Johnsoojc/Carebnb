@@ -4,3 +4,5 @@
 <p>Welcome to your profile <%= @user.email %></p>
 
 <%= button_to "Setting", {:action => "edit"}, {:method => "get"}%>
+
+<%= link_to "Show Listings", listings_path %>
