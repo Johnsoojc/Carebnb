@@ -2,6 +2,7 @@ class Listing < ApplicationRecord
   belongs_to :user
   has_many :tags
   has_many :taggings, through: :tags
+  has_many :bookings
 
   def all_tags=(names)
     self.taggings = names.downcase.split(",").map do |name|

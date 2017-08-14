@@ -20,7 +20,7 @@ class ListingsController < ApplicationController
   def create
     @listing = current_user.listings.new(listing_params)
     if @listing.save
-      redirect_to mylisting_path
+      redirect_to listing_path(@listing)
     else
       render 'new'
     end
@@ -34,7 +34,7 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
 
     if @listing.update(listing_params)
-      redirect_to mylisting_path
+      redirect_to listing_path
     else
       render 'edit'
     end
@@ -49,6 +49,6 @@ class ListingsController < ApplicationController
 
   private
   def listing_params
-    params.require(:listing).permit(:title, :price, :all_tags, all_tags_array: [])
+    params.require(:listing).permit(:title, :price, :all_tags, :max_guests, all_tags_array: [])
   end
 end

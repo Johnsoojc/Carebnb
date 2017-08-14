@@ -21,7 +21,12 @@ Rails.application.routes.draw do
   resources :users, controller: "users", only: [:show, :edit,:update]
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
-  resources :listings, controller: "listings"
+  resources :listings do
+    resources :bookings, controller:"bookings", only: [:create, :new]
+  end
+
   get "/mylisting" => "listings#mylisting"
+
+  resources :bookings, only: [:destroy]
 
 end

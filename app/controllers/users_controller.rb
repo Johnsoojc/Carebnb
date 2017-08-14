@@ -9,6 +9,7 @@ class UsersController < Clearance::UsersController
 
   def show
     @user = User.find(params[:id])
+    @booking = @user.bookings
   end
 
   def edit
