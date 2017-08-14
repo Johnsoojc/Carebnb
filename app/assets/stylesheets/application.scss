@@ -1,29 +1,19 @@
-/*----- Menu -----*/
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 
 body {
   padding: 0;
   margin: 0;
-  background: 
+  background:
     linear-gradient(
-      rgba(0, 0, 0, 0.3), 
+      rgba(0, 0, 0, 0.3),
       rgba(0, 0, 0, 0.3)
     ),
-  asset_url("sample_cover.jpg") no-repeat center center fixed; 
+  asset_url("sample_cover.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -70,7 +60,7 @@ body {
   width: 50%;
   float: left;
 }
- 
+
 /*----- Menu -----*/
   .menu {
     width:100%;
@@ -80,7 +70,7 @@ body {
 .menu ul {
   display:inline-block;
 }
- 
+
 .menu li {
   margin:0px 50px 0px 0px;
   float:left;
@@ -89,17 +79,17 @@ body {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
- 
+
 .menu li:last-child {
   margin-right:0px;
 }
- 
+
 .menu a {
   color:#fff;
   transition:color linear 0.15s;
   text-decoration: none;
 }
- 
+
 .menu a:hover, .menu .current-item a {
   text-decoration:none;
   color:#303030;
@@ -108,36 +98,39 @@ body {
   width:100%;
   background:#ff5a5f;
 }
- 
+
 .menu ul {
   display:inline-block;
 }
- 
+
 .menu li {
   margin:0px 50px 0px 0px;
   float:left;
   list-style:none;
   font-size:17px;
 }
- 
+
 .menu li:last-child {
   margin-right:0px;
 }
- 
+
 .menu a {
   color:#fff;
   transition:color linear 0.15s;
   text-decoration: none;
 }
- 
+
 .menu a:hover, .menu .current-item a {
   text-decoration:none;
   color:#303030;
 }
 
 #footer {
+
+  width: 100%;
   clear: both;
-  position: relative;
+  bottom:0;
+  position:fixed;
   z-index: 10;
   height: 3em;
   margin-top: -3em;

@@ -1,11 +1,14 @@
+<div class="container">
 <h1> Below are all the trending properties </h1>
-
-<table>
+<div class="table-responsive">
+<table class="table">
+  <meta charset="utf-8">
 
 <tr>
   <th>Title</th>
   <th>Price</th>
   <th>Who posted</th>
+  <th>Tags</th>
 </tr>
 
 <% @listings.each do |y| %>
@@ -14,11 +17,14 @@
   <td><%= y.title %></td>
   <td><%= y.price %></td>
   <td><%= y.user.email %></td>
+  <td><%= y.all_tags %></td>
 </tr>
 
 
 
 <% end %>
+</div>
+</div>
 </table>
 
 <%= button_to "Back to your profile", user_path(current_user), method: :get %>

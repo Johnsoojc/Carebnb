@@ -2,18 +2,25 @@
 
 <p>
   Title : <%= u.text_field :title %></br>
-  Price : <%= u.number_field :price %>
+  Price : <%= u.number_field :price %></br>
+  New Tags : <%= u.text_field :all_tags, placeholder: "Type in prefer tags with seperated commas"%></br>
+  <% @all_taggings.each do |x|%>
+
+  <%=x%> <%= u.check_box :all_tags_array, {multiple: true}, "#{x}", nil %>
+  <% end %>
+
 </p>
+
 <%= u.submit%>
 <% end %>
 
 <!-- This is another way of writing a form for update and making a new form!
 So you doesnt need to write two file -->
 
-<!-- <%= form_for([current_user, @listing]) do |u| %>
+<!-- <%# form_for([current_user, @listing]) do |u| %>
 <p>
-  Title : <%= u.text_field :title %></br>
-  Price : <%= u.number_field :price %>
+  Title : <%# u.text_field :title %></br>
+  Price : <%# u.number_field :price %>
 </p>
-<%= u.submit%>
-<% end %> -->
+<%# u.submit%>
+<%# end %> -->
