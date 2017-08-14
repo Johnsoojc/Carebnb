@@ -6,6 +6,7 @@
 <tr>
   <th> Title </th>
   <th> Price </th>
+  <th> Taggings </th>
 </tr>
 
 <% @listing.each do |u| %>
@@ -13,6 +14,7 @@
 <tr>
   <td><%= u.title %></td>
   <td><%= u.price %></td>
+  <td><%= u.all_tags %></td>
   <td><%= button_to 'Edit', edit_listing_path(u), method: :get %></td>
   <td><%= button_to 'Delete', listing_path(u),
       method: :delete,

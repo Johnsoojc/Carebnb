@@ -13,6 +13,8 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
+    @tagging = Tagging.new
+    @all_taggings =["Smoker", "Asshole", "Gamer", "Asian"]
   end
 
   def create
@@ -47,6 +49,6 @@ class ListingsController < ApplicationController
 
   private
   def listing_params
-    params.require(:listing).permit(:title, :price)
+    params.require(:listing).permit(:title, :price, :all_tags, all_tags_array: [])
   end
 end
