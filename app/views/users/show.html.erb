@@ -3,6 +3,26 @@
 
 <p>Welcome to your profile <%= @user.email %></p>
 
+<% @booking.each do |booking| %>
+<table>
+<tr>
+  <th>Destination</th>
+  <th>Start Date</th>
+  <th>End Date</th>
+  <th>No.of.Guest</th>
+</tr>
+<tr>
+  <td><%= booking.listing.title %></td>
+  <td><%= booking.start_date %></td>
+  <td><%= booking.end_date %></td>
+  <td><%= booking.num_guests %></td>
+</tr>
+</table>
+<% end %>
+
+
+
 <%= button_to "Setting", {:action => "edit"}, {:method => "get"}%>
 
-<%= link_to "Show Listings", listings_path %>
+<%= link_to "Show Listings", listings_path %></br>
+<%= link_to "Check your own list", mylisting_path, method: :get %>

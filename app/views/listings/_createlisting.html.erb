@@ -3,6 +3,7 @@
 <p>
   Title : <%= u.text_field :title %></br>
   Price : <%= u.number_field :price %></br>
+  Max Guests : <%= u.number_field :max_guests %></br>
   New Tags : <%= u.text_field :all_tags, placeholder: "Type in prefer tags with seperated commas"%></br>
   <% @all_taggings.each do |x|%>
 
@@ -11,7 +12,7 @@
 
 </p>
 
-<%= u.submit%>
+<%= u.submit %>
 <% end %>
 
 <!-- This is another way of writing a form for update and making a new form!

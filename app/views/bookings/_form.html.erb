@@ -1,0 +1,16 @@
+<%=form_for ([@listing , @booking]) do |u| %>
+
+<% if @errors.present? %>
+<div>
+<%= @errors %>
+</div>
+<% end %>
+
+<p>
+  Start Date : <%= u.date_field :start_date %></br>
+  End Date : <%= u.date_field :end_date %></br>
+  Guest : <%= u.number_field :num_guests %></br>
+</p>
+
+<%= u.submit %>
+<% end %>
