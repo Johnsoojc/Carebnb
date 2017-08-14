@@ -22,4 +22,10 @@ class Booking < ApplicationRecord
     errors.add(:max_guests, "Max guests is exceeded")
   end
 
+  def total_price
+    price = listing.price
+    num_dates = (start_date..end_date).to_a.length
+    return price * num_dates
+  end
+
 end
